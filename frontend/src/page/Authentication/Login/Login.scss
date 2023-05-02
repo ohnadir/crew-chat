@@ -9,6 +9,19 @@ $sing-up-button:#42b72a;
     display: flex;
     align-items: center;
     justify-content: center;
+    h2{
+        font-size: 24px;
+        color: #1c1e21;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .heading{
+        color: $login-button;
+        // font-size: 16px;
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 5px;
+    }
     .authentication-card{
         background-color: #fff;
         width: 400px;
@@ -19,10 +32,14 @@ $sing-up-button:#42b72a;
         input{
             width: 100%;
             padding: 12px 0 12px 12px;
-            border: 1px solid grey;
+            border: 1px solid #dddfe2;
+            outline: none;
             font-size: 15px;
             font-weight: 400;
-            color: grey;
+            color: #dddfe2;
+        }
+        input:focus{
+            border: 1px solid $login-button;
         }
         .login-button{
             background-color: $login-button;
@@ -55,7 +72,9 @@ $sing-up-button:#42b72a;
             font-weight: 500;
             padding: 6px 0;
             margin : 0 auto;
+            cursor: pointer;
             button{
+                cursor: pointer;
                 background-color: transparent;
                 border: none;
                 outline: none;

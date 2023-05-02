@@ -1,6 +1,6 @@
 import Chat from "./components/Chat"
 import Navbar from "./components/Navar"
-import 'antd/dist/antd.min.css'
+import 'antd/dist/reset.css'
 import { Routes, Route } from "react-router-dom"
 import Login from "./page/Authentication/login"
 
