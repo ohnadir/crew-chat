@@ -12,7 +12,7 @@ const Login = () => {
     const handleSubmit=()=>{}
     return (
         <div className='login'>
-            <div>
+            <div className=''>
                 <div>
                     <h1 className='heading'>Crew Chat</h1>
                     <h2 className=''>Crew Chat helps you connect and <br />
