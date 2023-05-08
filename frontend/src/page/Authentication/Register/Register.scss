@@ -1,0 +1,121 @@
+$button:#42b72a;
+.register{
+    padding: 12px 0 25px 0;
+    p{
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+    }
+    h3{
+        color: #606770;
+        font-family: SFProText-Medium, Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        font-weight: normal;
+        line-height: 20px;
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px 12px 20px;
+    }
+    .divider{
+        width: 100%;
+        height: 1px;
+        margin-bottom: 20px;
+        background-color: #eee !important;
+    }
+    .input-container{
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 12px;
+        margin-bottom: 15px;
+        .sub-input{
+            display: flex;
+            gap: 12px;
+        }
+        input{
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px ;
+            background-color: #f5f6f7;
+            border: 1px solid #ccd0d5;
+            outline: none;
+        }
+    }
+    .date-section{
+        padding: 0 20px;
+    }
+    .date-container{
+        
+        display: flex;
+        justify-content: space-between;
+        input{
+            width: 30%;
+        }
+    }
+    .gender-container{
+        padding: 0 20px;
+        margin: 12px 0;
+        .gender{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 2px;
+            .gender-items{
+                position: relative;
+                width: 30%;
+                border: 1px solid grey;
+                padding: 0 12px;
+                height: 30px;
+                border-radius: 3px;
+                display: flex;
+                justify-content: end;
+                .input::before{
+                    content: "Female";
+                    position: absolute;
+                    top: 5%;
+                    left: 12px;
+                }
+                .input1::before{
+                    content: "Male";
+                    position: absolute;
+                    top: 5%;
+                    left: 12px;
+                }
+                .input2::before{
+                    content: "Custom";
+                    position: absolute;
+                    top: 5%;
+                    left: 12px;
+                }
+            }
+        }
+    }
+    .terms-and-policy{
+        padding: 0 20px;
+    }
+    .sign-up{
+        width: 30%;
+        margin: 0 auto;
+        margin-top: 10px;
+        button{
+            width: 100%;
+            border-radius: 4px;
+            background-color: $button;
+            color: white;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+}
+.ant-modal-content{
+    padding: 0 !important;
+}

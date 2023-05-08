@@ -1,9 +1,15 @@
 import React, { useState } from 'react'
 import "./Login.scss"
 import { Modal } from 'antd';
+import Register from '../Register';
 
 const Login = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [auth, setAuth] = useState('');
+    const handleChange = ()=>{
+        setAuth(prev=>({...prev, [e.taget.name] : e.target.value}))
+    }
+    const handleSubmit=()=>{}
     return (
         <div className='login'>
             <div>
@@ -13,8 +19,8 @@ const Login = () => {
                      share with the people in your life.</h2>
                 </div>
                 <div className='authentication-card'>
-                    <input type="text" placeholder='Email address or phonr number' />
-                    <input type="password" placeholder='Password' />
+                    <input onChange={handleChange} name='email' type="text" placeholder='Email address or phonr number' />
+                    <input onChange={handleChange} name='password' type="password" placeholder='Password' />
                     <div className='login-button'>
                         <button>Log in</button>
                     </div>
@@ -25,10 +31,16 @@ const Login = () => {
                     <div className='create-button' onClick={()=>setIsModalOpen(true)}>
                         <button>Create new account</button>
                     </div>
-                    <Modal title="Basic Modal" centered open={isModalOpen} onCancel={()=>setIsModalOpen(false)}>
-                        <p>Some contents...</p>
-                        <p>Some contents...</p>
-                        <p>Some contents...</p>
+                    <Modal 
+                        centered 
+                        open={isModalOpen} 
+                        onCancel={false}
+                        closable={false}
+                        style={{padding: 0}}
+                        bodyStyle={{padding: 0, border:"none" }}
+                        footer={false}
+                    >
+                        <Register setIsModalOpen={setIsModalOpen} />
                     </Modal>
                 </div>
             </div>
