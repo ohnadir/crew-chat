@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 import "./Register.scss";
 import { MdOutlineHelp } from "react-icons/md"
-import { GrFormClose } from "react-icons/gr"
+import { GrFormClose } from "react-icons/gr";
+import { months, days, years } from "../../../JSON/Date"
 
 const Register = ({setIsModalOpen}) => {
   const [auth, setAuth] = useState('');
-  const handleChange = ()=>{
-    setAuth(prev=>({...prev, [e.taget.name] : e.target.value}))
+  const handleChange = (e)=>{
+    setAuth(prev=>({...prev, [e.target.name] : e.target.value}))
   }
-  const handleSubmit=()=>{
-
-  }
+  console.log(auth)
+  const handleSubmit=()=>{}
+  const date = new Date();
+  const Month = date.toLocaleString('default', { month: 'long' });
+  var Day = String(date.getDate()).padStart(2, '0');
+  var Year = date.getFullYear();
   return (
     <div className='register'>
       <section className="header">
@@ -18,7 +22,7 @@ const Register = ({setIsModalOpen}) => {
           <h1>Sign Up</h1>
           <p>It's quick and easy</p>
         </div>
-        <GrFormClose onClick={()=>setIsModalOpen(false)} size={28}/>
+        <GrFormClose className='cursor-pointer' onClick={()=>setIsModalOpen(false)} size={28}/>
       </section>
       <hr className="divider" />
       <div className='input-container'>
@@ -34,9 +38,30 @@ const Register = ({setIsModalOpen}) => {
       <section className='date-section'>
         <h3>Date of birth <MdOutlineHelp/></h3> 
         <div className='date-container'>
-          <input onChange={handleChange} type="date" name="" id="" />
-          <input onChange={handleChange} type="date" name="" id="" />
-          <input onChange={handleChange} type="date" name="" id="" />
+          <select name="" id="">
+            <option value="">{Day}</option>
+            {
+              days.map((day)=>
+                <option value={day} style={{backgroundColor: Day === day ? "blue" :""}}>{day}</option>
+              )
+            }
+          </select>
+          <select name="" id="">
+            <option value="">{Month}</option>
+            {
+              months.map((month)=>
+                <option value="months" style={{backgroundColor: Month === month ? "blue" :""}}>{month}</option>
+              )
+            }
+          </select>
+          <select name="" id="">
+            <option value="">{Year}</option>
+            {
+              years.map((year)=>
+                <option value={year} style={{backgroundColor: Year === year ? "blue" :""}}>{year}</option>
+              )
+            }
+          </select>
         </div>
       </section>
 
@@ -45,17 +70,36 @@ const Register = ({setIsModalOpen}) => {
         <h3>Gender <MdOutlineHelp/></h3> 
         <div className='gender'>
           <div className='gender-items'>
-            {/* <label htmlFor="female">Female</label> */}
-            <input onChange={handleChange} className='input' type="radio" name="" id="" /> 
+            <input onChange={handleChange} className='input' value="female" type="radio" name="gender" id="" /> 
           </div>
           <div className='gender-items'>
-            <input onChange={handleChange} className='input1' type="radio" name="" id="" />
+            <input onChange={handleChange} className='input1' value="male" type="radio" name="gender" id="" />
           </div>
           <div className='gender-items'>
-            <input onChange={handleChange} className='input2' type="radio" name="" id="" />
+            <input onChange={handleChange} className='input2' value="custom" type="radio" name="gender" id="" />
           </div>
         </div>
       </section>
+      {
+        auth.gender === "custom" ?
+        <section className="custom-gender">
+          <div>
+            <select name="" id="">
+              <option value="">Select your pronoun</option>
+              <option value="She">She: "Wish her a happy Birthday"</option>
+              <option value="They">They: "Wish them a happy Birthday"</option>
+              <option value=""></option>
+            </select>
+            <div className='my-2'>
+              <p >Your pronoun is visible to everyone.</p>
+            </div>
+            <input type="text" onChange={handleChange} name="custom-gender" placeholder='Gender (optional)' id="" />
+          </div>
+        </section>
+        :
+        null
+      }
+      
       {/* terms and policy */}
       <section className="terms-and-policy">
         <p>People who use our service may have uploaded your contact information to Crew chat. </p>

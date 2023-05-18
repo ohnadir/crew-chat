@@ -12,10 +12,10 @@ const Login = () => {
     const handleSubmit=()=>{}
     return (
         <div className='login'>
-            <div className=''>
-                <div>
-                    <h1 className='heading'>Crew Chat</h1>
-                    <h2 className=''>Crew Chat helps you connect and <br />
+            <div className=' flex md:flex-row flex-col items-center'>
+                <div className='md:mr-[100px]'>
+                    <h1 className='heading text-center text-[40px] md:text-left'>Crew Chat</h1>
+                    <h2 className='text-[24px]'>Crew Chat helps you connect and <br />
                      share with the people in your life.</h2>
                 </div>
                 <div className='authentication-card'>
