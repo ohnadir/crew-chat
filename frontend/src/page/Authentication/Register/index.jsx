@@ -88,7 +88,6 @@ const Register = ({setIsModalOpen}) => {
               <option value="">Select your pronoun</option>
               <option value="She">She: "Wish her a happy Birthday"</option>
               <option value="They">They: "Wish them a happy Birthday"</option>
-              <option value=""></option>
             </select>
             <div className='my-2'>
               <p >Your pronoun is visible to everyone.</p>
